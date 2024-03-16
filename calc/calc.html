@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <title>Calculadora</title>
+
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+
+        .atras{
+            background-image: linear-gradient(45deg, black, green);
+            height: 100vh;
+            color: #fff;
+            font-size: 16px;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            text-align: center; 
+        }
+
+        .calculadora{
+            position: absolute;
+            background-color: #2a2929;
+            top: -5%;
+            left: 50%;
+            transform: translate(-50%, 50%);
+            border-radius: 12px;
+            padding: 15px;
+        }
+
+        .btn-calc{
+            width: 50px;
+            height: 50px;
+            font-size: 30px;
+            margin: 2px;
+            cursor: pointer;
+            background-color: rgba(21, 21, 21);
+            color: #fff;
+            transition: 1s;
+            border-radius: 10px;
+            border: none;
+        }
+
+        .btn-calc:hover{
+            background-color: rgb(3, 3, 3);
+            transform: scale(1.1);
+        }
+
+        i{
+            color: red;
+            transform: 1s;
+            padding: 10px;
+        }
+
+        i:hover{
+            color: #fff;
+            transition: 0.5s;
+        }
+
+        .del:hover{
+            background-color: rgb(253, 0, 0);
+            transform: 0.3s;
+        }
+
+        #res{
+            width: 200px;
+            height: 32px;
+            background-color: white;
+            margin: 3px;
+            font-size: 25px;
+            color: black;
+            text-align: right;
+            padding: 1px;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="atras">
+        <h1>Vinicius - Primeiro Projeto</h1>
+
+        <div class="calculadora"> 
+            <h1>Calculadora</h1>
+            <p id="res"></p>
+            
+            <table>
+                <tr>
+                    <td><button class="btn-calc" onclick="clean()">C</button></td>
+                    <td><button class="btn-calc del" onclick="back()"><i class="bi bi-backspace-fill"></i></button></td>
+                    <td><button class="btn-calc" onclick="insert('*')">X</button></td>
+                    <td><button class="btn-calc" onclick="insert('/')">/</button></td>
+                </tr>
+                <tr>
+                    <td><button class="btn-calc" onclick="insert('7')">7</button></td>
+                    <td><button class="btn-calc" onclick="insert('8')">8</button></td>
+                    <td><button class="btn-calc" onclick="insert('9')">9</button></td>
+                    <td><button class="btn-calc" onclick="insert('+')">+</button></td>
+                </tr>
+                <tr>
+                    <td><button class="btn-calc" onclick="insert('4')">4</button></td>
+                    <td><button class="btn-calc" onclick="insert('5')">5</button></td>
+                    <td><button class="btn-calc" onclick="insert('6')">6</button></td>
+                    <td><button class="btn-calc" onclick="insert('-')">-</button></td>
+                </tr>
+                <tr>
+                    <td><button class="btn-calc" onclick="insert('1')">1</button></td>
+                    <td><button class="btn-calc" onclick="insert('2')">2</button></td>
+                    <td><button class="btn-calc" onclick="insert('3')">3</button></td>
+                    <td rowspan="2" class="btn-calc"><button class="btn-calc" style="height: 100px;" onclick="calcular()">=</button></td>
+                </tr>
+                <tr>
+                    <td colspan="2"><button class="btn-calc" style="width: 100px;" onclick="insert('0')">0</button></td>
+                    <td><button class="btn-calc" onclick="insert('.')">.</button></td>
+                </tr>
+            </table>
+        </div>
+    </div>
+
+    <script src="calc.js"></script>
+</body>
+</html>
